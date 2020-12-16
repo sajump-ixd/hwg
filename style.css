@@ -1,0 +1,72 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #F0F0F0;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 50px;
+  padding: 30px;
+}
+
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: 200;
+}
+
+a img {     
+  border: 20px solid white;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 4;
+  filter: drop-shadow(6px 10px 10px #cecece);
+}
+
+a:hover {
+  font-weight: 400;
+}
+
+a:active {
+  font-weight: 600;
+}
+
+img {
+  margin: 20px;
+}
+
+a img:hover {
+  filter: drop-shadow(6px 10px 10px #bcbcbc);
+
+}
+
+.art {
+  margin-bottom: 100px;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+    padding: 20px;
+  } 
+
+  div {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  }
+}
