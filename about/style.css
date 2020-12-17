@@ -69,9 +69,8 @@ canvas {
 
 @media only screen and (max-width: 800px) {
   h1 {
-    font-weight: 200;
     font-size: 28px;
-    padding: 20px;
+    padding: 30px;
   }
 
   div p {
