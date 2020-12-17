@@ -28,8 +28,9 @@ h1 {
 
 .subtitle {
   padding: 0px;
-  margin-top: -30px;
+  margin-top: -25px;
   margin-bottom: 80px;
+  color: #7e7e7e;
 }
 
 a {
@@ -79,6 +80,9 @@ a img:hover {
     font-size: 28px;
     padding: 20px;
   } 
+  .subtitle {
+    padding: 20px;
+  }
 
   div {
   padding-top: 0px;
