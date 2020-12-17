@@ -27,7 +27,7 @@ function setup() {
   c.position(0, w); 
   background('white');
 
-  labelX = createDiv('x value'); 
+  labelX = createDiv('x value:'  + sliderX.value()); 
   sliderX = createSlider(1, 500, 240); 
   sliderX.parent(labelX);
 
