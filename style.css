@@ -44,6 +44,10 @@ a:active {
   font-weight: 600;
 }
 
+a img:hover {
+  filter: invert(100%);
+}
+
 img {
   margin: 20px;
 }
