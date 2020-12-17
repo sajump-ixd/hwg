@@ -76,5 +76,14 @@ canvas {
   div p {
     width: 80%;
   }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  
+  }
   
 }
