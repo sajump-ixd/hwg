@@ -1,15 +1,12 @@
 let sliderSize; // size
-let sliderR; // rotation
-let sliderX; // x value
 let sliderY; // y value
 let sliderA; // alpha
-let buttonReset; // restart
 let buttonSave; // save
 let buttonPause; // pause
 let p = 0; // pause switcher
-let i = 0; // invert switcher
-let t = 0;
+let t = 0; // time
 let g; // gray value
+let b; // background
 
   
 let w = 80; // resize variable
@@ -27,23 +24,22 @@ function setup() {
 
   let c = createCanvas(windowWidth, windowHeight - w );
   c.position(0, w); 
-  // background('white');
+  
+  labelG = createDiv('dot'); 
+  sliderG = createSlider(0, 255, 255); 
+  sliderG.parent(labelG);
 
-  // labelX = createDiv('x value'); 
-  // sliderX = createSlider(1, 500, 240); 
-  // sliderX.parent(labelX);
-
-  labelY = createDiv('y value'); 
-  sliderY = createSlider(0, 360, 1); 
-  sliderY.parent(labelY);
-
-  // labelR = createDiv('rotation'); 
-  // sliderR = createSlider(0, 100, 59); 
-  // sliderR.parent(labelR);
+  labelB = createDiv('background'); 
+  sliderB = createSlider(0, 255, 0); 
+  sliderB.parent(labelB);
 
   labelA = createDiv('alpha'); 
   sliderA = createSlider(0, 100, 10);
   sliderA.parent(labelA);
+
+  labelY = createDiv('y value'); 
+  sliderY = createSlider(0, 360, 1); 
+  sliderY.parent(labelY);
 
   labelSize = createDiv('size'); 
   sliderSize = createSlider(1, 30, 15); 
@@ -52,24 +48,12 @@ function setup() {
   labelT = createDiv('speed'); 	
   sliderT = createSlider(1, 30, 7);	
   sliderT.parent(labelT);
-  
-  labelInvert = createDiv(); 
-  buttonInvert = createButton('invert'); 
-  buttonInvert.parent(labelInvert);
-  buttonInvert.mousePressed(invert);
-  buttonInvert.class('button');
 
   labelPause = createDiv(); 
   buttonPause = createButton('pause'); 
   buttonPause.parent(labelPause);
   buttonPause.mousePressed(pause);
   buttonPause.class('button');
-  
-  labelReset = createDiv(); 
-  buttonReset = createButton('restart'); 
-  buttonReset.parent(labelReset);
-  buttonReset.mousePressed(windowResized);
-  buttonReset.class('button');
 
   labelSave = createDiv(); 
   buttonSave = createButton('save'); 
@@ -93,46 +77,19 @@ function setup() {
   }
 
   function windowResized() {
-    p = 255;
-    pause();
     resizeCanvas(windowWidth, windowHeight - w);
-    if (i == 0){
-      background('white');
-    } else {
-      background('black');
-    }
     c.position(0, w);
   }; 
 
 
- 
-  function invert(){
-    if (i == 0){
-      i = 255; 
-    } else {
-      i = 0;
-    }
-    filter(INVERT);
-  };
-  
   function draw() { 
     
-    if (i == 0){
-      g = 0;
-    } else {
-      g = 255;
-    }
-    background(0);
+    let g = (sliderG.value()); // gray dot value
+    let b = (sliderB.value()); // background value
+    var a = (sliderA.value()); // background opacity
+    background(b, a);
     
-    //noStroke();
-    // fill(g, a); 
-    // var t = frameCount;
-    
-    
-    // var r = (sliderR.value());
-    // var x = (sliderX.value());
-    //var y = (sliderY.value());
-    
+    noStroke();
 
     for (let x = 0; x <= (width+18); x = x + 55) { 
       for (let y = 0; y <= (height+18); y = y + 18) { 
@@ -151,11 +108,9 @@ function setup() {
     }
   
     t = t + (sliderT.value()/1000); 
-    var a = (sliderA.value());
-    fill(g, a);
     
-    
-    
+    fill(g);
+  
   };
   
   // save as a jpg
