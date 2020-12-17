@@ -1,12 +1,14 @@
-let sliderS; // size
+let sliderSize; // size
 let sliderR; // rotation
 let sliderX; // x value
 let sliderY; // y value
+let sliderA; // alpha
 let buttonReset; // restart
 let buttonSave; // save
 let buttonPause; // pause
 let p = 0; // pause switcher
 let i = 0; // invert switcher
+let t = 0;
 let g; // gray value
 
   
@@ -25,23 +27,31 @@ function setup() {
 
   let c = createCanvas(windowWidth, windowHeight - w );
   c.position(0, w); 
-  background('white');
+  // background('white');
 
-  labelX = createDiv('x value'); 
-  sliderX = createSlider(1, 500, 240); 
-  sliderX.parent(labelX);
+  // labelX = createDiv('x value'); 
+  // sliderX = createSlider(1, 500, 240); 
+  // sliderX.parent(labelX);
 
   labelY = createDiv('y value'); 
-  sliderY = createSlider(1, 500, 377); 
+  sliderY = createSlider(0, 360, 1); 
   sliderY.parent(labelY);
 
-  labelR = createDiv('rotation'); 
-  sliderR = createSlider(0, 100, 59); 
-  sliderR.parent(labelR);
+  // labelR = createDiv('rotation'); 
+  // sliderR = createSlider(0, 100, 59); 
+  // sliderR.parent(labelR);
 
-  labelS = createDiv('size'); 
-  sliderS = createSlider(10, 2000, 600); 
-  sliderS.parent(labelS);
+  labelA = createDiv('alpha'); 
+  sliderA = createSlider(0, 100, 10);
+  sliderA.parent(labelA);
+
+  labelSize = createDiv('size'); 
+  sliderSize = createSlider(1, 30, 15); 
+  sliderSize.parent(labelSize);
+
+  labelT = createDiv('speed'); 	
+  sliderT = createSlider(1, 30, 7);	
+  sliderT.parent(labelT);
   
   labelInvert = createDiv(); 
   buttonInvert = createButton('invert'); 
@@ -112,21 +122,44 @@ function setup() {
     } else {
       g = 255;
     }
+    background(0);
     
-    noFill();
-    stroke(g, 10); 
-    var t = frameCount;
-    var s = (sliderS.value());
-    var r = (sliderR.value());
-    var x = (sliderX.value());
-    var y = (sliderY.value());
+    //noStroke();
+    // fill(g, a); 
+    // var t = frameCount;
     
-    translate(windowWidth / 2, (windowHeight-w) / 2);
-		rotate((t / r)+t);
-    ellipse(0, 0, tan(t / x) * s, tan(t / y) * s);
+    
+    // var r = (sliderR.value());
+    // var x = (sliderX.value());
+    //var y = (sliderY.value());
+    
+
+    for (let x = 0; x <= (width+18); x = x + 55) { 
+      for (let y = 0; y <= (height+18); y = y + 18) { 
+       
+        const yAngle = map(sliderY.value(), 0, height, 13, 160, true);
+        const xAngle = map(0, 0, width, 29, 200);
+        
+        const angle = yAngle * (y / height) + xAngle * (x / width);
+       
+        const myX = x + 20 * cos(2 * PI * t + angle);
+        const myY = y + 20 * sin(2 * PI * t + angle);
+      
+        let size = (sliderSize.value());
+        ellipse(myX, myY, size); 
+      }
+    }
+  
+    t = t + (sliderT.value()/1000); 
+    var a = (sliderA.value());
+    fill(g, a);
+    
+    
+    
   };
   
   // save as a jpg
   function saveArt() {
     saveCanvas( 'sketchD', 'jpg')
   }
+

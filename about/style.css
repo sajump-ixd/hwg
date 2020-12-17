@@ -24,6 +24,10 @@ h1 {
   
 }
 
+.title {
+  align-items: center;
+}
+
 .art {
   justify-content: center;
   align-content: center;
@@ -65,9 +69,19 @@ canvas {
   display: block;
 }
 
-
-
 @media only screen and (max-width: 800px) {
+  .title {
+    align-items: center;
+  }
+  
+  div p {
+    width: auto;
+    padding: 80px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
   h1 {
     font-size: 28px;
     padding-top: 30px;
@@ -77,14 +91,10 @@ canvas {
 
   div p {
     width: 80%;
-  }
+  } 
 
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-  
+  .title {
+    align-items: center;
   }
   
 }

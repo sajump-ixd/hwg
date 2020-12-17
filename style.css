@@ -43,8 +43,8 @@ a img {
   border: 10px solid black;
   background-color: white;
   padding: 16px;
-  width: 200px;
-  height: 200px;
+  width: 225px;
+  height: 225px;
   flex-shrink: 4;
   filter: drop-shadow(6px 10px 12px #8e8e8e);
 }
