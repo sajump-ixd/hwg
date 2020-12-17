@@ -84,6 +84,10 @@ function setup() {
     resizeCanvas(windowWidth, windowHeight - w);
     background('white');
     c.position(0, w);
+    if (p == 255){
+      loop();
+      p = 0; }
+  
   } 
   
   function draw() { 
