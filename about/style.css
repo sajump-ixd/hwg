@@ -9,7 +9,7 @@ html, body {
 div {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
 
@@ -70,7 +70,9 @@ canvas {
 @media only screen and (max-width: 800px) {
   h1 {
     font-size: 28px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   div p {
@@ -80,7 +82,6 @@ canvas {
   div {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     align-content: center;
   
