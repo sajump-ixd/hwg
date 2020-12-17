@@ -34,19 +34,19 @@ function setup() {
   sliderB.parent(labelB);
 
   labelA = createDiv('alpha'); 
-  sliderA = createSlider(0, 100, 10);
+  sliderA = createSlider(1, 50, 10);
   sliderA.parent(labelA);
-
-  labelY = createDiv('y value'); 
-  sliderY = createSlider(0, 360, 1); 
-  sliderY.parent(labelY);
 
   labelSize = createDiv('size'); 
   sliderSize = createSlider(1, 30, 15); 
   sliderSize.parent(labelSize);
 
-  labelT = createDiv('speed'); 	
-  sliderT = createSlider(1, 30, 7);	
+  labelY = createDiv('y value'); 
+  sliderY = createSlider(0, 280, 1); 
+  sliderY.parent(labelY);
+
+  labelT = createDiv('path'); 	
+  sliderT = createSlider(0, 20, 20);	
   sliderT.parent(labelT);
 
   labelPause = createDiv(); 
@@ -100,14 +100,15 @@ function setup() {
         const angle = yAngle * (y / height) + xAngle * (x / width);
        
         const myX = x + 20 * cos(2 * PI * t + angle);
-        const myY = y + 20 * sin(2 * PI * t + angle);
+        const myY = y + 20 * sin((sliderT.value()/10) * PI * t + angle);
       
         let size = (sliderSize.value());
         ellipse(myX, myY, size); 
       }
     }
   
-    t = t + (sliderT.value()/1000); 
+    //t = t + (sliderT.value()/1000); 
+    t = t + 0.0089;
     
     fill(g);
   
