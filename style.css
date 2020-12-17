@@ -15,7 +15,7 @@ div {
 
 h1 {
   font-size: 50px;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .title {
@@ -84,8 +84,12 @@ a img:hover {
   
   h1 {
     font-size: 28px;
-    padding: 0px;
+    padding-top: 40px;
   } 
+
+  .subtitle {
+    padding-bottom: 10px;
+  }
 
 
   div {
