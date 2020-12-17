@@ -108,7 +108,7 @@ function setup() {
     }
   
     //t = t + (sliderT.value()/1000); 
-    t = t + 0.0089;
+    t = t + 0.01;
     
     fill(g);
   
