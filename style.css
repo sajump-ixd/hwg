@@ -80,13 +80,16 @@ a img:hover {
   h1 {
     font-size: 28px;
     padding-top: 30px;
+    padding-bottom: 0px;
   } 
-
+ 
   .subtitle {
-    padding-bottom: -40px;
+    padding-bottom: 0px;
   }
-
-  div {
+  .title {
+    padding-bottom: 0px;
+  }
+  .art {
   padding-top: 0px;
   padding-bottom: 0px;
   }
