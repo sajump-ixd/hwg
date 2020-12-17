@@ -28,12 +28,13 @@ a {
 }
 
 a img {     
-  border: 20px solid white;
-  padding: 20px;
+  border: 10px solid black;
+  background-color: white;
+  padding: 16px;
   width: 200px;
   height: 200px;
   flex-shrink: 4;
-  filter: drop-shadow(6px 10px 10px #cecece);
+  filter: drop-shadow(6px 10px 12px #8e8e8e);
 }
 
 a:hover {
@@ -44,17 +45,14 @@ a:active {
   font-weight: 600;
 }
 
-a img:hover {
-  filter: invert(100%);
-}
-
 img {
   margin: 20px;
 }
 
 a img:hover {
-  filter: drop-shadow(6px 10px 10px #bcbcbc);
-
+  filter: drop-shadow(6px 10px 10px #808080) invert(100%) ;
+  border: 10px solid white;
+  background-color: black;
 }
 
 .art {
