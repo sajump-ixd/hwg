@@ -25,7 +25,7 @@ function setup() {
   let c = createCanvas(windowWidth, windowHeight - w );
   c.position(0, w); 
   
-  labelG = createDiv('dot'); 
+  labelG = createDiv('ellipse'); 
   sliderG = createSlider(0, 255, 255); 
   sliderG.parent(labelG);
 
