@@ -58,7 +58,7 @@ a:active {
 }
 
 img {
-  margin: 20px;
+  margin: 26px;
 }
 
 a img:hover {
@@ -68,9 +68,11 @@ a img:hover {
 }
 
 .art {
+  margin-top: -30px;
   margin-bottom: 100px;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+
 }
 
 
